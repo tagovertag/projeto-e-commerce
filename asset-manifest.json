@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/projeto-e-commerce/static/js/main.1bd01ff7.js",
+    "main.js": "/projeto-e-commerce/static/js/main.f2852937.js",
     "static/js/453.d194d1d9.chunk.js": "/projeto-e-commerce/static/js/453.d194d1d9.chunk.js",
     "static/media/pizza.png": "/projeto-e-commerce/static/media/pizza.5125e8a298cfb77426ab.png",
     "static/media/fundo.png": "/projeto-e-commerce/static/media/fundo.51cf7bd9d52e7f0a629e.png",
@@ -8,10 +8,10 @@
     "static/media/Sushi.png": "/projeto-e-commerce/static/media/Sushi.e951b8058c782eaa60ca.png",
     "static/media/banner.png": "/projeto-e-commerce/static/media/banner.784e90d06596c838a246.png",
     "index.html": "/projeto-e-commerce/index.html",
-    "main.1bd01ff7.js.map": "/projeto-e-commerce/static/js/main.1bd01ff7.js.map",
+    "main.f2852937.js.map": "/projeto-e-commerce/static/js/main.f2852937.js.map",
     "453.d194d1d9.chunk.js.map": "/projeto-e-commerce/static/js/453.d194d1d9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.1bd01ff7.js"
+    "static/js/main.f2852937.js"
   ]
 }
