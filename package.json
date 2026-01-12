@@ -13,8 +13,9 @@
     "@types/react-dom": "^19.2.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "react-router-dom": "^7.12.0",
     "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
+    "styled-components": "^6.1.19",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -40,5 +41,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "@types/styled-components": "^5.1.36",
+    "@typescript-eslint/eslint-plugin": "^8.50.1",
+    "@typescript-eslint/parser": "^8.50.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "typescript": "^5.9.3"
   }
 }
