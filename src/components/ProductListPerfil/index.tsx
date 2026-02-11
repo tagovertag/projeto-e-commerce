@@ -1,77 +1,65 @@
-import Product from '../ProductPerfil';
-import { Container } from '../../styles';
+import { useState } from 'react' 
+import Product from '../ProductPerfil'
+import { Container } from '../../styles'
 import { List, SectionContainer } from './styles'
-import pizza from '../../assets/imagens/Perfil/pizza.png'
+import { Modal } from '../Modal' 
 
 
-
-const pizzas = [
-    {
-        id: 1,
-        titulo: 'Pizza Marguerita',
-        descricao: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite.',
-        imagem: pizza
-    },
-
-    {
-        id: 2,
-        titulo: 'Pizza Marguerita',
-        descricao: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite.',
-        imagem: pizza
-    },
-
-    {
-        id: 3,
-        titulo: 'Pizza Marguerita',
-        descricao: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite.',
-        imagem: pizza
-    },
-
-    {
-        id: 4,
-        titulo: 'Pizza Marguerita',
-        descricao: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite.',
-        imagem: pizza
-    },
-
-    {
-        id: 5,
-        titulo: 'Pizza Marguerita',
-        descricao: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite.',
-        imagem: pizza
-    },
-
-    {
-        id: 6,
-        titulo: 'Pizza Marguerita',
-        descricao: 'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite.',
-        imagem: pizza
-    }
-    
-]
-
-type Props = {
-    title: string
-    
+interface Prato {
+  foto: string
+  preco: number
+  id: number
+  nome: string
+  descricao: string
+  porcao: string
 }
 
-const ProductList = ({ title }: Props) => (
-    <SectionContainer >
-        <Container>
-            <List>
-                {pizzas.map((pizza) =>
-                    <Product
-                        key={pizza.id}
-                        titulo={pizza.titulo}
-                        descricao={pizza.descricao}
-                        imagem={pizza.imagem}
-                    />
-                )}
-            </List >
-        </Container >
-    </SectionContainer>
-    
+interface Props {
+  itens: Prato[] 
+}
 
-)
+const ProductList = ({ itens }: Props) => {
+  
+  const [modalAberta, setModalAberta] = useState(false)
+  const [pratoSelecionado, setPratoSelecionado] = useState<Prato | null>(null)
+
+
+  const handleOpenModal = (prato: Prato) => {
+    setPratoSelecionado(prato)
+    setModalAberta(true)
+  }
+
+  return (
+    <SectionContainer>
+      <Container>
+        <List>
+          
+          {itens.map((pizza) => (
+            <div key={pizza.id} onClick={() => handleOpenModal(pizza)}>
+              <Product
+                titulo={pizza.nome}
+                descricao={pizza.descricao}
+                imagem={pizza.foto}
+              />
+            </div>
+          ))}
+        </List>
+      </Container>
+
+      
+      <Modal
+        visivel={modalAberta}
+        fecharModal={() => setModalAberta(false)}
+        produto={pratoSelecionado ? {
+          foto: pratoSelecionado.foto,
+          name: pratoSelecionado.nome,
+          descricao: pratoSelecionado.descricao,
+          porcao: pratoSelecionado.porcao,
+          preco: pratoSelecionado.preco
+        } : null}
+      />
+    </SectionContainer>
+  )
+}
 
 export default ProductList

@@ -7,15 +7,15 @@ export const BannerImg = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-size: cover; /* faz a imagem cobrir todo o espaço*/
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; /* centraliza a imagem */
+    background-position: center; 
     margin-bottom: 80px;
 `
 
 export const LogoBanner = styled.img`
     margin-top: 40px;
-    width: 125px; /* Padrão do logo do efood */
+    width: 125px; 
     height: auto;
     
 `

@@ -3,8 +3,8 @@ import { Cores } from "../../styles"
 
 // essa div envolve as imagens e as tags
 export const ImgContainer = styled.div`
-    position: relatve;
-    width: 100%
+    position: relative;
+    width: 100%;
     
 `
 
@@ -14,11 +14,17 @@ export const Card = styled.div`
     width: 100%;
     max-width: 472px;
     position: relative;
-    border: px solid ${Cores.color_salmon};
+    border: 1px solid ${Cores.color_salmon};
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 `
 
 export const InfoContainer = styled.div`
     padding: 8px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 `
 
 export const ImgCard = styled.img`
@@ -66,11 +72,12 @@ font-size: 14px;
 line-height: 22px;
 color: ${Cores.color_salmon};
 margin-bottom: 16px;
+flex: 1;
 `
 
 export const BotaoContainer = styled.div<{ disabled?: boolean }>`
-    display: inline-block;
+    display: flex;
     opacity: ${(props) => (props.disabled ? 0.5 : 1)};
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
-    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+    margin-top: auto;
     `

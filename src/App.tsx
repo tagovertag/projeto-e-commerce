@@ -1,15 +1,15 @@
-import { BrowserRouter } from 'react-router-dom'
+import {  HashRouter } from 'react-router-dom'
 import { GlobalCss } from './styles'
 import Rotas from './Rotas/routes'
 import Footer from './components/Footer'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter> 
       <GlobalCss />
       <Rotas />
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

@@ -14,4 +14,4 @@ export const Button_Card = styled.button`
     color: ${Cores.color_salmon};
     cursor: pointer;
     display: block;
-`;
+`

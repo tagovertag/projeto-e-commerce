@@ -11,7 +11,7 @@ export const List = styled.ul`
     column-gap: 32px;
     row-gap: 32px;
     margin-top: 56px;
-    margin-bottom 120px;
+    margin-bottom: 120px;
 
     @media (max-width: 1024px) {
     width: 50%;

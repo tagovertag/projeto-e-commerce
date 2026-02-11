@@ -15,7 +15,7 @@ type RestauranteProps = {
     
 }
 
-const Restaurante = ({ name, category, information, nota, capa, destacado }: RestauranteProps) => {
+const Restaurante = ({ name, category, id, information, nota, capa, destacado }: RestauranteProps) => {
     const isSushi = name.toLowerCase().includes('hioki');
 
     return (
@@ -40,10 +40,8 @@ const Restaurante = ({ name, category, information, nota, capa, destacado }: Res
                     <BotaoContainer disabled={isSushi}>
                         {isSushi ? (
                             <Tag size="big">Em breve</Tag>
-                        ) : (
-                        <Link to="/perfil">
-                            <Tag size="big">Saiba mais</Tag>
-                        </Link>
+                    ) : (
+                        <Link to={`/restaurante/${id}`}><Tag size="big">Saiba mais</Tag></Link>    
                         )}
                     </BotaoContainer>
                 

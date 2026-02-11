@@ -7,7 +7,7 @@ export const Footer_Container = styled.footer`
     justify-content: center; /* empilha  os itens um embaixo do outro */
     display: flex;
     flex-direction: column;    
-    background-color: ${Cores.color_footer}
+    background-color: ${Cores.color_footer};
 
 `
 

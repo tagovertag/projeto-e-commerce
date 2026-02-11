@@ -1,23 +1,34 @@
 import Button from './Button';
 import { Card, Titulo_Card, Descricao_Card } from './styles';
 
-// Definimos o modelo dos dados que vamos receber
+
 type Props = {
     titulo: string;
     descricao: string;
     imagem: string;
 }
 
-const Product = ({titulo, descricao, imagem}: Props) => (
-    <Card>
-      
-        <img src={imagem} alt={titulo} />
+const Product = ({ titulo, descricao, imagem }: Props) => {
+    
+    const getDescricao = (descricao: string) => {
+        if (descricao.length > 140) {
+            return descricao.slice(0, 137) + '...';
+        }
+        return descricao;
+    }
+
+    return (
+        <Card>
+
+            <img src={imagem} alt={titulo} />
         
-        <Titulo_Card>{titulo}</Titulo_Card>
+            <Titulo_Card>{titulo}</Titulo_Card>
         
-        <Descricao_Card>{descricao}</Descricao_Card>
-        <Button>Adicionar ao carrinho</Button>
-    </Card>
-)
+            <Descricao_Card>{getDescricao(descricao)}</Descricao_Card>
+            <Button>Adicionar ao carrinho</Button>
+        </Card>
+        
+    )
+}
 
 export default Product;

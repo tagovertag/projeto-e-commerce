@@ -1,13 +1,21 @@
 import { Imagem_banner, Texto_banner, Titulo_banner } from "./styles"
-import fundo from "../../assets/imagens/Perfil/fundo.png"
 import { Container } from "../../styles"
-const Banner = () => (
-    <Imagem_banner style={{ backgroundImage: `url(${fundo})` }}>
-        <Container>
-            <Titulo_banner>Italiana</Titulo_banner>
-            <Texto_banner>La Dolce Vita Trattoria</Texto_banner>
-        </Container>
 
-    </Imagem_banner>
+
+type Props = {
+  categoria: string
+  nome: string
+  imagem: string
+}
+
+const Banner = ({ categoria, nome, imagem }: Props) => (
+
+  <Imagem_banner style={{ backgroundImage: `url(${imagem})` }}>
+    <Container>
+      <Titulo_banner>{categoria}</Titulo_banner>
+      <Texto_banner>{nome}</Texto_banner>
+    </Container>
+  </Imagem_banner>
 )
-export default Banner 
+
+export default Banner
