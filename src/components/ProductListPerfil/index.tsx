@@ -1,9 +1,10 @@
-import { useState } from 'react' 
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Product from '../ProductPerfil'
+import { add, open } from '../../store/reducers/cart'
 import { Container } from '../../styles'
 import { List, SectionContainer } from './styles'
-import { Modal } from '../Modal' 
-
+import { Modal } from '../Modal'
 
 interface Prato {
   foto: string
@@ -15,11 +16,11 @@ interface Prato {
 }
 
 interface Props {
-  itens: Prato[] 
+  itens: Prato[]
 }
 
 const ProductList = ({ itens }: Props) => {
-  
+  const dispatch = useDispatch()
   const [modalAberta, setModalAberta] = useState(false)
   const [pratoSelecionado, setPratoSelecionado] = useState<Prato | null>(null)
 
@@ -27,6 +28,16 @@ const ProductList = ({ itens }: Props) => {
   const handleOpenModal = (prato: Prato) => {
     setPratoSelecionado(prato)
     setModalAberta(true)
+  }
+
+  const handleAddProduto = (prato: Prato) => {
+    dispatch(add({
+      id: prato.id,
+      nome: prato.nome,
+      foto: prato.foto,
+      preco: prato.preco
+    }))
+    dispatch(open())
   }
 
   return (
@@ -40,19 +51,23 @@ const ProductList = ({ itens }: Props) => {
                 titulo={pizza.nome}
                 descricao={pizza.descricao}
                 imagem={pizza.foto}
+                onAdd={(e) => {
+                  e.stopPropagation()
+                  handleAddProduto(pizza)
+                }}
               />
             </div>
           ))}
         </List>
       </Container>
 
-      
       <Modal
         visivel={modalAberta}
         fecharModal={() => setModalAberta(false)}
         produto={pratoSelecionado ? {
+          id: pratoSelecionado.id,
           foto: pratoSelecionado.foto,
-          name: pratoSelecionado.nome,
+          nome: pratoSelecionado.nome,
           descricao: pratoSelecionado.descricao,
           porcao: pratoSelecionado.porcao,
           preco: pratoSelecionado.preco

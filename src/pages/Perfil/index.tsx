@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import HeaderPerfil from '../../components/Header' 
 import BannerPerfil from '../../components/BannerPerfil' 
 import ProductList from '../../components/ProductListPerfil'
+import Header from '../../components/Header'
 
 
 const Perfil = () => {
@@ -19,8 +19,7 @@ const Perfil = () => {
 
   return (
     <>
-      <HeaderPerfil />
-      
+      <Header />
       <BannerPerfil 
         categoria={restaurante.tipo} 
         nome={restaurante.titulo} 

@@ -3,7 +3,7 @@ import { Button_Card } from './styles'
 
 type Props = {
     children: React.ReactNode
-    onClick?: () => void
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const Button = ({ children, onClick }: Props) => (

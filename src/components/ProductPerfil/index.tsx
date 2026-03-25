@@ -6,9 +6,10 @@ type Props = {
     titulo: string;
     descricao: string;
     imagem: string;
+    onAdd?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const Product = ({ titulo, descricao, imagem }: Props) => {
+const Product = ({ titulo, descricao, imagem, onAdd }: Props) => {
     
     const getDescricao = (descricao: string) => {
         if (descricao.length > 140) {
@@ -19,15 +20,11 @@ const Product = ({ titulo, descricao, imagem }: Props) => {
 
     return (
         <Card>
-
             <img src={imagem} alt={titulo} />
-        
             <Titulo_Card>{titulo}</Titulo_Card>
-        
             <Descricao_Card>{getDescricao(descricao)}</Descricao_Card>
-            <Button>Adicionar ao carrinho</Button>
+            <Button onClick={onAdd}>Adicionar ao carrinho</Button>
         </Card>
-        
     )
 }
 
