@@ -42,10 +42,10 @@ export const Modal = ({ visivel, fecharModal, produto }: ModalProps) => {
                 <S.Foto src={produto.foto} alt={produto.nome} />
                 <S.DescricaoContainer>
                     <h3>{produto.nome}</h3>
-                    <p>{produto.descricao}</p>
+                    <p>{produto.descricao} </p>
                     <p>Serve: {produto.porcao}</p>
                     <S.BotaoAdicionar onClick={adicionarAoCarrinho}>
-                        Adicionar ao carrinho - R$ {produto.preco.toFixed(2).replace('.', ',')}
+                        Adicionar ao carrinho - R$ {produto.preco.toFixed(2).replace('.',  ',')}
                     </S.BotaoAdicionar>
                 </S.DescricaoContainer>
             </S.ModalBox>

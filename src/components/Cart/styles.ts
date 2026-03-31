@@ -1,7 +1,7 @@
 
 import styled from 'styled-components'
 import { Cores } from '../../styles'
-import fechar from '../../assets/imagens/Perfil/fechar.png'
+import lixeira from '../../assets/imagens/Perfil/lixeira.png'
 export const Overlay = styled.div`
     position: fixed;
     top: 0;
@@ -53,10 +53,17 @@ export const CartItem = styled.li`
     span{
         color: ${Cores.color_salmon};
         font-size: 14px;
+
+        & + span {
+            margin-left: 8px;
+        }
     }
 
     button{
-        background-image: url(${fechar});
+        background-image: url(${lixeira});
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
         width: 16px;
         height: 16px;
         background-color: transparent;
