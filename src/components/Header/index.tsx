@@ -1,17 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux' // Importe os Hooks
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from "react-router-dom"
 
 import { HeaderBar, LinkHeader} from "./styles"
 import logo from "../../assets/imagens/Home/logo.png"
 import { Container } from "../../styles"
 
-import { RootReducer } from '../../store' // Importe o tipo da sua Store
-import { open } from '../../store/reducers/cart' // Importe a ação de abrir
+import { RootReducer } from '../../store' 
+import { open } from '../../store/reducers/cart' 
 
 const Header = () => {
   const dispatch = useDispatch()
   
-  // Pegamos a lista de itens do Redux para contar quantos tem
+
   const { items } = useSelector((state: RootReducer) => state.cart)
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
         
         <img src={logo} alt="efood" />
         
-        {/* Adicionamos o onClick para abrir o carrinho e a contagem real */}
+
         <LinkHeader 
           as="span" 
           onClick={() => dispatch(open())} 

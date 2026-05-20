@@ -5,32 +5,24 @@ import { add, open } from '../../store/reducers/cart'
 import { Container } from '../../styles'
 import { List, SectionContainer } from './styles'
 import { Modal } from '../Modal'
-
-interface Prato {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
+import type { Product as ProductType } from '../../types'
 
 interface Props {
-  itens: Prato[]
+  itens: ProductType[]
 }
 
 const ProductList = ({ itens }: Props) => {
   const dispatch = useDispatch()
   const [modalAberta, setModalAberta] = useState(false)
-  const [pratoSelecionado, setPratoSelecionado] = useState<Prato | null>(null)
+  const [pratoSelecionado, setPratoSelecionado] = useState<ProductType | null>(null)
 
 
-  const handleOpenModal = (prato: Prato) => {
+  const handleOpenModal = (prato: ProductType) => {
     setPratoSelecionado(prato)
     setModalAberta(true)
   }
 
-  const handleAddProduto = (prato: Prato) => {
+  const handleAddProduto = (prato: ProductType) => {
     dispatch(add({
       id: prato.id,
       nome: prato.nome,

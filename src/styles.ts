@@ -4,7 +4,9 @@ export const Cores = {
     color_salmon: '#E66767',
     color_body: '#FFF8F2',
     color_footer: '#FFEBD9',
-    color_text: '#FFFFFF'
+    color_text: '#FFFFFF',
+    color_dark_gray: '#4B4B4B',
+    color_erros: '#FF4D4D',
 }
 
 export const GlobalCss = createGlobalStyle`

@@ -1,18 +1,12 @@
-import { useDispatch } from 'react-redux'; // Importamos o disparador
-import { add, open } from '../../store/reducers/cart'; // Importamos as ações
+import { useDispatch } from 'react-redux'; 
+import { add, open } from '../../store/reducers/cart'; 
+import type { Product } from '../../types'
 import * as S from "./styles";
 
 interface ModalProps {
     visivel: boolean;
     fecharModal: () => void;
-    produto: {
-        id: number;
-        nome: string;
-        foto: string;
-        descricao: string;
-        preco: number;
-        porcao: string;
-    } | null;
+    produto: Product | null;
 }
 
 export const Modal = ({ visivel, fecharModal, produto }: ModalProps) => {
@@ -22,7 +16,6 @@ export const Modal = ({ visivel, fecharModal, produto }: ModalProps) => {
         return null;
     }
 
-    // Função para adicionar e já abrir o carrinho
     const adicionarAoCarrinho = () => {
         if (produto) {
             dispatch(add({

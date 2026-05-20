@@ -3,17 +3,7 @@ import Tag from "../Tag";
 import estrela from "../../assets/imagens/Home/estrela.png"
 import { Card, ImgCard, HeaderCard, MainTitle, Avaliacao, Descrition, TagsContainer, ImgContainer, InfoContainer, BotaoContainer } from "./styles";
 import { Link } from "react-router-dom";
-
-type RestauranteProps = {
-    name: string;
-    category: string;
-    id: number;
-    information: string;
-    nota: string;
-    capa: string;
-    destacado?: boolean;
-    
-}
+import type { RestauranteProps } from '../../types'
 
 const Restaurante = ({ name, category, id, information, nota, capa, destacado }: RestauranteProps) => {
     const isSushi = name.toLowerCase().includes('hioki');
