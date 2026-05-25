@@ -17,4 +17,8 @@ export const List = styled.ul`
         column-gap: 0;
         row-gap: 32px;
     }
+    @media (max-width: 768px) {
+        padding: 0 45px;
+        
+    }
 `

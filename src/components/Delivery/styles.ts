@@ -9,7 +9,7 @@ export const InputGroup = styled.div`
     font-weight: 700;
     font-size: 14px;
     margin-bottom: 8px;
-    color: ${Cores.color_footer}; // Cor do texto bege
+    color: ${Cores.color_footer};
   }
 
   input {
@@ -22,13 +22,13 @@ export const InputGroup = styled.div`
     color: ${Cores.color_dark_gray};
     outline: none;
 
-    /* Estilo para quando der erro de validação no Formik */
+    
     &.error {
       border: 2px solid ${Cores.color_erros};
     }
   }
 
-  /* Mensagem de texto vermelha abaixo do input */
+  
   span.error-message {
     color: ${Cores.color_dark_gray};
     font-size: 12px;
@@ -44,11 +44,12 @@ export const Header = styled.h3`
   font-weight: 700;
 `
 
-// ADICIONAMOS O ROW AQUI:
+
 export const Row = styled.div`
   display: flex;
-  column-gap: 34px; /* Espaço entre os inputs que ficam lado a lado */
+  column-gap: 34px; 
   width: 100%;
+
 `
 
 export const ButtonContainer = styled.div`

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Cores } from "../../styles";
 
 
 export const Overlay = styled.div`
@@ -7,7 +8,7 @@ export const Overlay = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: ${Cores.color_black};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,8 +17,8 @@ export const Overlay = styled.div`
 
 
 export const ModalBox = styled.div`
-    background-color: #E66768;
-    color: #fff;
+    background-color: ${Cores.color_salmon};
+    color: ${Cores.color_text};
     max-width: 1024px;
     padding: 32px;
     position: relative;
@@ -27,6 +28,7 @@ export const ModalBox = styled.div`
     @media (max-width: 768px) {
         flex-direction: column;
         width: 90%;
+
     }
 `
 
@@ -58,8 +60,8 @@ export const DescricaoContainer = styled.div`
 
 
 export const BotaoAdicionar = styled.button`
-    background-color: #ffebd9;
-    color: #e66767;
+    background-color: ${Cores.color_footer};
+    color: ${Cores.color_salmon};
     border: none;
     padding: 4px 12px;
     font-weight: bold;

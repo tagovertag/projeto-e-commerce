@@ -3,8 +3,8 @@ import { Cores } from "../../styles"
 export const Footer_Container = styled.footer`
     width: 100%;
     padding: 40px 0;
-    align-items: center; /* centraliza horizontalmente */
-    justify-content: center; /* empilha  os itens um embaixo do outro */
+    align-items: center; 
+    justify-content: center;
     display: flex;
     flex-direction: column;    
     background-color: ${Cores.color_footer};

@@ -12,7 +12,7 @@ export const Imagem_banner = styled.div`
   position: relative;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 
-  /* Garante que o conteúdo (texto) fique acima da camada escura */
+
   ${Container} {
     z-index: 1;
     position: relative;
@@ -20,16 +20,34 @@ export const Imagem_banner = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    padding: 32px 0; /* Espaçamento interno em cima e embaixo */
+    padding: 32px 0;
+    
+  @media (max-width: 1024px) {
+    width: 70%;
+  }
+
+  @media (max-width: 768px) {
+        width: 90%;
+        margin-left: 40px;
+    }
   }
 `
+
 export const Titulo_banner = styled.h2`
     font-size: 32px;
     font-weight: 100;
-    color: ${Cores.color_text}
+    color: ${Cores.color_text};
+
+  
 `
+
 export const Texto_banner = styled.p`
     font-size: 32px;
     font-weight: 900;
     padding-top: 96px;
+      
+
+    
 `
+
+

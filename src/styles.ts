@@ -7,6 +7,9 @@ export const Cores = {
     color_text: '#FFFFFF',
     color_dark_gray: '#4B4B4B',
     color_erros: '#FF4D4D',
+    color_red: '#e61919',
+    color_green: '#4caf50',
+    color_black: 'rgba(0, 0, 0, 0.7)'
 }
 
 export const GlobalCss = createGlobalStyle`
